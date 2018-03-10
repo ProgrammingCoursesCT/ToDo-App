@@ -12,8 +12,21 @@ You can find the list of all courses at [programmingcoursesct.github.io](https:/
 ## Installation
 * Install Angular CLI as global
     
-        yarn global add @angular/cli
+        npm install -g @angular/cli
 
 * Create an Angular application
 
         ng new Introduction-to-Web-Development --routing
+
+## Deployment
+* Install Angular CLI GitHub pages
+
+        yarn add --dev angular-cli-ghpages
+
+* Build
+
+        ng build --prod --base-href="https://programmingcoursesct.github.io/Introduction-to-Web-Development/"
+
+* Deploy
+
+        ./node_modules/angular-cli-ghpages/bin/angular-cli-ghpages
