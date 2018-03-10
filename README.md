@@ -2,6 +2,8 @@
 
 You can find the list of all courses at [programmingcoursesct.github.io](https://programmingcoursesct.github.io/).
 
+You can test the app at [programmingcoursesct.github.io/Introduction-to-Web-Development](https://programmingcoursesct.github.io/Introduction-to-Web-Development/)
+
 ## Prerequisites:
 * [Google Chrome Web Browser](https://www.google.com/chrome/)
 * [Visual Studio Code](https://code.visualstudio.com/)
@@ -17,6 +19,14 @@ You can find the list of all courses at [programmingcoursesct.github.io](https:/
 * Create an Angular application
 
         ng new Introduction-to-Web-Development --routing
+
+## Development
+
+* Start server
+
+        ng serve
+*
+        ng serve --host=192.168.0.108
 
 ## Deployment
 * Install Angular CLI GitHub pages
