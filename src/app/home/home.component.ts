@@ -1,22 +1,27 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
 
-  toDos = ["clean your room", "take out the trash", "cure cancer", "save the world"]
+  toDos = [];
   length = 0;
   value = "";
   @ViewChild("input") input = null;
 
-  constructor() {
+  constructor(private _data: DataService) {
     this.updateLength();
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.updateLength();
+    this._data.toDos.subscribe(res => this.toDos = res);
+    this._data.updateToDos(this.toDos);
+  }
 
   ngAfterViewInit() {
     this.setFocus();
@@ -29,6 +34,7 @@ export class HomeComponent implements OnInit {
   onClose(index) {
     this.toDos.splice(index, 1);
     this.updateLength();
+    this._data.updateToDos(this.toDos);
   }
 
   onInputKeyUp(event) {
@@ -46,6 +52,7 @@ export class HomeComponent implements OnInit {
     this.toDos.unshift(this.value);
     this.value = "";
     this.updateLength();
+    this._data.updateToDos(this.toDos);
   }
 
   setFocus() {
