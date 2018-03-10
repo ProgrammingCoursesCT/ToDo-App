@@ -25,7 +25,7 @@ You can test the app at [programmingcoursesct.github.io/Introduction-to-Web-Deve
 * Start server
 
         ng serve
-*
+        
         ng serve --host=192.168.0.108
 
 ## Deployment
