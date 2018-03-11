@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="input-container">
+    <input #input type="text" [value]="value" [(ngModel)]="value" (keyup)="onInputKeyUp($event)" class="input" placeholder="What must be done?"
+    />
+  </div>
+  <div *ngFor="let item of toDos; let i = index;" class="list-item">
+    <div style="padding-right: 21px;">{{item}}</div>
+    <button (click)="onClose(i)" class="close-button">X</button>
+  </div>
+</div>
