@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   toDos = [];
   length = 0;
-  value = "";
+  inputValue = "";
   @ViewChild("input") input = null;
 
   constructor(private _data: DataService) {
@@ -46,11 +46,11 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     this.setFocus();
-    if (this.value === "") {
+    if (this.inputValue === "") {
       return;
     }
-    this.toDos.unshift(this.value);
-    this.value = "";
+    this.toDos.unshift(this.inputValue);
+    this.inputValue = "";
     this.updateLength();
     this._data.updateToDos(this.toDos);
   }
